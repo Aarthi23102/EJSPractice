@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./common/header') %>
+
+    <body>
+        <%- include('./common/navbar') %>
+        <h1>Create a blog</h1>
+        <form action="/newBlog" method="POST" class="w-25 container">
+            <div class="form-floating mb-3">
+                <input type="title" class="form-control" id="title" name="title" placeholder="enter name...">
+                <label for="title">Title</label>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="content" style="height: 100px" name="content"></textarea>
+                <label for="content">Content</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        <%- include('./common/footer') %>
+    </body>
+</html>

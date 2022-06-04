@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./common/header') %>
+<script src="/javaScript/contactUS.js"></script>
+<body>
+        <%- include('./common/navbar') %>
+            <h1>Contact us</h1>
+
+            <form class="container w-50" onsubmit="sendEmail()" action="/sendMail" method="POST">
+                <div class="form-floating mb-3">
+                    <input type="username" class="form-control" id="username" placeholder="enter name..." name="name">
+                    <label for="username">Enter your name</label>
+                  </div>
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="message" style="height: 100px" name="message"></textarea>
+                    <label for="message">Message</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <!-- <script>
+                function sendEmail(e) {
+                    console.log(e);
+                    e.preventDefault();
+                    emailjs.sendForm('service_62zm63h', 'template_k82uu9j', e.target, '2aqrXlbsDCrI_ERzk')
+                        .then((result) => {
+                            console.log("sent");
+                            alert('Mail sent successfully');
+                        }, (error) => {
+                            console.log(error.text);
+                        });
+                        e.target.reset();
+                }
+            </script> -->
+        <%- include('./common/footer') %>
+    </body>
+</html>
